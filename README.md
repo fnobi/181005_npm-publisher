@@ -44,6 +44,21 @@
   - githubのレポジトリをターミナルから扱う時に便利なコマンドを集めたやつ
   - 個人的には`hub create`だけ異様な頻度で使っている
 
+## scoped modules
+
+- 自分用の名前空間を区切ってパッケージを公開することもできる
+  - [publish | npm Documentation](https://docs.npmjs.com/cli/publish)
+  - [npmで名前空間を持ったモジュールを公開する方法(scoped modules) | Web Scratch](https://efcl.info/2015/04/30/npm-namespace/)
+  - この場合は名前の重複を気にしなくて良い
+  - ex) [@vue/cli](https://www.npmjs.com/package/@vue/cli), [@babel/preset-stage-3](https://www.npmjs.com/package/@babel/preset-stage-3)
+
+### つかいかた
+
+- package名を `{npmユーザ名}/{パッケージ名}` という形にする
+- publish時に `npm publish` ではなく `npm publish --access=public` を使う
+  - デフォルトでは、 `--access=restricted` という権限になっている（自分として認証しないとinstallできない）
+  - restrictedは有料ユーザー専用機能
+
 ## 最速公開の手順
 
 ### ディレクトリの準備
@@ -85,21 +100,6 @@ console.log(createZoi());
 require('../cli.js');
 ```
 
-### scoped modules
-
-- 自分用の名前空間を区切ってパッケージを公開することもできる
-  - [publish | npm Documentation](https://docs.npmjs.com/cli/publish)
-  - [npmで名前空間を持ったモジュールを公開する方法(scoped modules) | Web Scratch](https://efcl.info/2015/04/30/npm-namespace/)
-  - この場合は名前の重複を気にしなくて良い
-  - ex) [@vue/cli](https://www.npmjs.com/package/@vue/cli), [@babel/preset-stage-3](https://www.npmjs.com/package/@babel/preset-stage-3)
-
-#### つかいかた
-
-- package名を `{npmユーザ名}/{パッケージ名}` という形にする
-- publish時に `npm publish` ではなく `npm publish --access=public` を使う
-  - デフォルトでは、 `--access=restricted` という権限になっている（自分として認証しないとinstallできない）
-  - restrictedは有料ユーザー専用機能
-
 ## バージョンを上げる
 
 ```
@@ -130,5 +130,3 @@ $ npm publish
   - → **マイナーバージョンを上げる**
 - 呼び出し方が変わる（後方互換性なし）大幅なアップデート
   - → **メジャーバージョンを上げる**
-
-## おわり
