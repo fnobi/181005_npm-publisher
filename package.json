@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "sector-slide -s ~/.memo-rough-86d7e/-LNpz4ojt8CwJgCFHTEa.md"
+    "start": "sector-slide -s README.md"
   },
   "author": "Fujisawa Shin",
   "license": "ISC",

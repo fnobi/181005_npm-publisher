@@ -1,0 +1,32 @@
+section {
+    background-color: navy;
+    color: #fff;
+}
+
+article {
+    overflow-y: scroll;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article strong {
+    font-weight: bold;
+    color: navy;
+}
+
+article a {
+    color: #88f;
+}
+
+section h1 span,
+section h2 span,
+section h3 span,
+section h4 span {
+    display: block;
+}
+
+code {
+    background-color: #eef;
+}
